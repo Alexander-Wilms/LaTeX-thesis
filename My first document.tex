@@ -1,17 +1,4 @@
-% LaTeX commands start with a slash, followed by the command name.
-% Optional parameters are given between square brackets, obligatory
-% parameters between curly braces. Many common commands are easily
-% accessible in the toolbar and the menu above, as well as the sidebar
-% on the left. You can enable the sidebar via the 'View' menu.
-
-% Specify the type of document and its properties
 \documentclass[a4paper,11pt]{article}
-
-% Start of preamble
-% Include packages which provide additional functionality
-% In order to use some LaTeX-packages, you will need to install
-% them via your package manager. The package names will likely
-% differ, though.
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -20,39 +7,26 @@
 % required to include graphics
 \usepackage{graphicx}
 \title{My first \LaTeX{} document}
-% Name of the author
 \author{Jon Doe}
-% End of preamble
-
-% The entire document's contents are enclosed by the two document commands
 \begin{document}
-% Insert the title specified above
 \maketitle
-% Insert an auto-generated table of contents
 \tableofcontents
-\newpage
 
-% The document structure is determined by the section and paragraph commands
-% In order to easily navigate within your document, use the overview in the sidebar
+\newpage
 \section{Introduction}
 This edit has been added in a branch. Will git ignore the PDF file and auxiliary files? This has been added via Pocket Git. \cite{Johnston.2003}
 Welcome to \LaTeX ila. This document\footnote{And this is a footnote} is just meant to allow you to get
 familiar with the general structure of a Latex document. To get a more in-depths understanding of LaTeX, you may want to read \emph{The Not So Short Introduction to \LaTeX{} 2$_\epsilon$}.
 
 \subsection{Equations}
-% Numerated equations are written like this
 \begin{equation}
     A=a \cdot b
 \end{equation}
 
 \subsection{Graphics}
-% Insert a numbered figure. The "h" option specifies that it won't be moved somewhere else
 \begin{figure}[h]
-    % Center the image
     \begin{center}
-        % Include the graphics file and resize it
         \includegraphics[width=50pt,height=50pt]{./latexila.png}
-        % Add a short explanation
         \caption{The LaTeXila icon}
     \end{center}
 \end{figure}
@@ -60,13 +34,8 @@ familiar with the general structure of a Latex document. To get a more in-depths
 \subsection{Tables}
 \begin{table}[h]
     \begin{center}
-        % Create a table with 3 left-aligned (l) columns.
-        % The pipes add vertical borders
         \begin{tabular}{|l|l|l|}
-            % \hline adds the horizontal lines between rows
             \hline
-            % Columns are separated by an ampersand and
-            % rows are terminated using the line break command \\
             Country         & Area                 & Capital\\ \hline
             Russia          & 17,075,200 $km^2$    & Moskow \\ \hline
             Canada          & 9,984,670 $km^2$     & Ottawa \\ \hline
@@ -76,9 +45,7 @@ familiar with the general structure of a Latex document. To get a more in-depths
     \end{center}
     \caption{The 4 largest countries in the world}
 \end{table}
+
 \newpage
-
 \bibliography{Bibliographie}
-
-
 \end{document}
