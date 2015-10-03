@@ -20,6 +20,9 @@
 % Stichwortverzeichnis
 \usepackage{makeidx}
 \makeindex
+% Works around a bug in LaTeX, which results in a wrong vertical position of the title
+% http://tex.stackexchange.com/questions/49959/wrong-vertical-position-of-heading-created-by-printindex
+\usepackage{idxlayout}
 % Zeilenabstand 1,5 Zeilen
 \usepackage{setspace}
 \onehalfspacing
@@ -69,7 +72,7 @@
 \normalsize
 \vspace{12pt}
 Abschlussarbeit zur Erlangung des akademischen Grades \\ 
-Bachelor of Science (B.Sc.) 
+Bachelor of Science (B.Sc.)
 
 \vfill
 
@@ -78,9 +81,9 @@ Vorname Nachname
 
 \vfill
 
-\begin{tabular}[h]{p{4cm}l l}
+\begin{tabular}[h]{p{4cm}l}
 	Referent(in): & Name des Erstbetreuers\\
-	Korreferent(in):  & Name des Zweitbetreuers
+	Korreferent(in):  & Name des Zweitbetreuers \\
 \end{tabular}
 
 \end{center}
@@ -113,7 +116,7 @@ Darmstadt, den \today
 \tableofcontents
 \newpage
 \section{Einführung}
-Lorem ipsum dolor sit amet, consectetur adipiscing elit \ac{KDE}. Donec a diam lectus \cite{Accardi.2010}. Sed sit amet ipsum mauris. \index{Maecenas} congue ligula ac quam viverra nec consectetur ante hendrerit \cite{Lewis.2010}. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. 
+Lorem ipsum dolor sit amet, consectetur adipiscing elit \ac{KDE}. Donec a diam lectus \cite{Accardi.2010}. Sed sit amet ipsum mauris. Maecenas \index{Maecenas} congue ligula ac quam viverra nec consectetur ante hendrerit \cite{Lewis.2010}. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. 
 
 \begin{figure}[h]
 \center \includegraphics[width=0.5\textwidth]{Bilder/PT1/PT1.eps}
@@ -143,7 +146,9 @@ Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverr
 \addcontentsline{toc}{section}{Literatur}
 \printbibliography
 \newpage
+\renewcommand{\indexname}{Stichwortverzeichnis}
 \printindex
+\addcontentsline{toc}{section}{Stichwortverzeichnis}
 \newpage
 \section*{Abkürzungsverzeichnis}
 \addcontentsline{toc}{section}{Abkürzungsverzeichnis}
