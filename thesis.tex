@@ -1,11 +1,6 @@
 \documentclass[a4paper,12pt]{article}
-% pdf-Metadaten
-\pdfinfo{    
-     /Title (PDF-Titel) 
-     /Subject   (PDF-Thema)    
-     /Author  (Vorname Nachname) 
-     /Keywords   (Stichwort1,Stichwort2)      
-} 
+\title{My first \LaTeX{} document}
+\author{Jon Doe}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -49,11 +44,13 @@
 % allows including eps graphics
 \usepackage{epstopdf}
 % makes TOC and references clickable
-\usepackage[hidelinks]{hyperref}
+\usepackage[hidelinks,pdfusetitle]{hyperref}
+% pdf-Metadaten
+\hypersetup{
+	pdfsubject = {The subject of this thesis},
+	pdfkeywords = {Keyword1, Keyword2}}
 % Siehe http://tex.stackexchange.com/questions/28198/using-ieeetrantools
 \usepackage[retainorgcmds]{IEEEtrantools}
-\title{My first \LaTeX{} document}
-\author{Jon Doe}
 
 \begin{document}
 \newpage\null\thispagestyle{empty}\newpage
