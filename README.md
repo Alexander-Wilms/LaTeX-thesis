@@ -8,5 +8,6 @@
   * Code-folding
   * einfache Handhabung von Dokumenten bestehend aus mehreren .tex-Dateien
   * Automatisches Installieren benötigter Pakete via MikTeX
+  * Automatisches Ersetzen regulärer Anführungszeichen durch typographische
 * Für eine Grammatikprüfung Languagetool integrieren, siehe http://wiki.languagetool.org/checking-la-tex-with-languagetool#toc4
 * Citavis Publikationsassistenten zum Einfügen von Zitaten nutzen
