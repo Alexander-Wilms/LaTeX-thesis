@@ -11,3 +11,4 @@
   * Automatisches Ersetzen regulärer Anführungszeichen durch typographische
 * Für eine Grammatikprüfung Languagetool integrieren, siehe http://wiki.languagetool.org/checking-la-tex-with-languagetool#toc4
 * Citavis Publikationsassistenten zum Einfügen von Zitaten nutzen
+* Wenn die Bibliographie-Label inkorrekt sind, einmal biber laufen lassen
