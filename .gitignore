@@ -23,9 +23,13 @@
 *.synctex.gz
 *.synctex
 *.tex~
-*.pdf
+# *.pdf
 *.bcf
 *.run.xml
+
+# Project specific
+thesis.pdf
+octave-workspace
 
 # Windows image file caches
 Thumbs.db
