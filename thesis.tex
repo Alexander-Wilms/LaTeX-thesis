@@ -112,9 +112,18 @@ anderen als die im Literaturverzeichnis angegebenen Quellen benutzt habe. \\
 Darmstadt, den \today
 \newpage
 \phantomsection
-\addcontentsline{toc}{section}{Zusammenfassung}
+\addcontentsline{toc}{section}{Abstract}
+\let\oldabstractname\abstractname
+\renewcommand{\abstractname}{Abstract}
 \begin{abstract}
 \blindtext \blindtext
+\end{abstract}
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Zusammenfassung}
+\let\abstractname\oldabstractname
+\begin{abstract}
+	\blindtext \blindtext
 \end{abstract}
 \newpage
 \section*{Vorwort}
