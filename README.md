@@ -1,6 +1,6 @@
 # PDF
 
-[![PDF Status](https://www.sharelatex.com/github/repos/Alexander-Wilms/LaTeX-testing/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/Alexander-Wilms/LaTeX-testing/builds/latest/output.pdf)
+[![PDF Status](https://www.sharelatex.com/github/repos/Alexander-Wilms/LaTeX-thesis/builds/latest/badge.svg)](https://www.sharelatex.com/github/repos/Alexander-Wilms/LaTeX-thesis/builds/latest/output.pdf)
 
 # TexStudio
 * Übersicht über Struktur des Dokuments
