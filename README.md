@@ -19,3 +19,6 @@
 * Bibtex-Datei erzeugen via Datei > Exportieren
 * In TexStudio mithilfe des Citavi Publikationsassitenten die Zitate einfügen
 * In TexStudio Biber als Bibliographie-Backend einstellen
+
+# Alternativ: Atom & Sumatra PDF
+* Benötigte Pakete: latex, language-latex
