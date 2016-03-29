@@ -21,4 +21,4 @@
 * In TexStudio Biber als Bibliographie-Backend einstellen
 
 # Alternativ: Atom & Sumatra PDF
-* Benötigte Pakete: latex, language-latex
+* Benötigte Pakete: latex, language-latex, latexer, minimap
