@@ -8,6 +8,8 @@
 * einfache Handhabung von Dokumenten bestehend aus mehreren .tex-Dateien
 * Automatisches Installieren benötigter Pakete via MikTeX
 * Automatisches Ersetzen regulärer Anführungszeichen durch typographische
+* Autocomplete von Bibliographieeinträgen
+* Kompilierbefehle frei definierbar
 
 # LanguageTool
 * Für eine Grammatikprüfung Languagetool integrieren, siehe http://wiki.languagetool.org/checking-la-tex-with-languagetool#toc4
