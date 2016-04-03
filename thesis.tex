@@ -10,9 +10,9 @@
 % für Deutsche Begriffe und Silbentrennung
 \usepackage[ngerman]{babel}
 \usepackage{csquotes}
-% required for equations
+% Formeln
 \usepackage{amsmath}
-% required to include graphics
+% Grafiken
 \usepackage{graphicx}
 % Abkürzungsverzeichnis
 \usepackage[printonlyused]{acronym}
@@ -29,6 +29,7 @@
 % BibLaTeX benutzen
 \usepackage[backend=biber,citestyle=alphabetic,bibstyle=alphabetic]{biblatex}
 \addbibresource{bib/Bibliographie.bib}
+% Formatierung an Vorgaben anpassen
 \DeclareLabelalphaTemplate{
 	\labelelement{
 		\field[final]{shorthand}
@@ -46,10 +47,11 @@
 % Seitenränder anpassen
 \usepackage{geometry}
 \geometry{left=2cm, right=2cm, top=2.5cm, bottom=2cm}
-% allows including eps graphics
+% eps-Grafiken
 \usepackage{epstopdf}
 % Siehe http://tex.stackexchange.com/questions/28198/using-ieeetrantools
 \usepackage[retainorgcmds]{IEEEtrantools}
+
 \usepackage{microtype}
 \usepackage{blindtext}
 \newcounter{savepage}
@@ -60,7 +62,7 @@
 			pdfpagelayout = SinglePage,
 			hidelinks,
 			pdfusetitle]{hyperref}
-
+% Schneide automatisch alle mit /includegraphics eingebundene PDFs zu
 \usepackage{xstring}
 \let\oldincludegraphics\includegraphics
 \renewcommand{\includegraphics}[2][width=\textwidth]{
@@ -146,8 +148,6 @@ Jemand "`musste"' Josef K. verleumdet haben, denn ohne dass er etwas Böses \cit
 \blindtext
 Weiter unten im Text (S. 8) heißt es, dass es "`endgültige"' Leistungen in der Wissenschaft gar nicht geben könne.~\cite[S.~5--6]{Weber.1994b}
 \begin{figure}[h]
-	% Schneide eingebundenes PDF automatisch zu
-	%\immediate\write18{pdfcrop fig/PT1/PT1-matlab.pdf}
 	\centering \includegraphics[width=0.5\textwidth]{fig/PT1/PT1-matlab.pdf}
 	\caption{Bodediagramm PT1}
 \end{figure}
