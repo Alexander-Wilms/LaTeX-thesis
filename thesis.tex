@@ -65,7 +65,6 @@
 \newpage\null\thispagestyle{empty}\newpage
 \newpage
 \pagestyle{empty}
-
 \begin{figure}[t]
 	\centering
 	\includegraphics[width=0.35\textwidth]{fig/Logo/logo-h-da.eps}
@@ -139,8 +138,9 @@ Jemand "`musste"' Josef K. verleumdet haben, denn ohne dass er etwas Böses \cit
 \blindtext
 Weiter unten im Text (S. 8) heißt es, dass es "`endgültige"' Leistungen in der Wissenschaft gar nicht geben könne.~\cite[S.~5--6]{Weber.1994b}
 \begin{figure}[h]
-	% \centering \includegraphics[width=0.5\textwidth]{fig/PT1/PT1.eps}
-	\centering \includegraphics[width=0.5\textwidth]{fig/PT1/PT1-octave-crop.pdf}
+	% Schneide eingebundenes PDF automatisch zu
+	\immediate\write18{pdfcrop fig/PT1/PT1-matlab.pdf}%
+	\centering \includegraphics[width=0.5\textwidth]{fig/PT1/PT1-matlab-crop.pdf}
 	\caption{Bodediagramm PT1}
 \end{figure}
 \blindtext
