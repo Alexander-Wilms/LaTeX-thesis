@@ -60,6 +60,15 @@
 			pdfpagelayout = SinglePage,
 			hidelinks,
 			pdfusetitle]{hyperref}
+
+\usepackage{xstring}
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][width=\textwidth]{
+	\immediate\write18{pdfcrop #2}
+	\StrSubstitute{#2}{.pdf}{-crop.pdf}[\temp]
+	\oldincludegraphics[#1]{\temp}
+	}
+
 \begin{document}
 \pagenumbering{Roman}
 \newpage\null\thispagestyle{empty}\newpage
@@ -67,7 +76,7 @@
 \pagestyle{empty}
 \begin{figure}[t]
 	\centering
-	\includegraphics[width=0.35\textwidth]{fig/Logo/logo-h-da.eps}
+	\includegraphics[width=0.35\textwidth]{fig/Logo/h-da-logo-sw.pdf}
 \end{figure}
 \vfill
 \begin{center}
@@ -95,8 +104,7 @@ vorgelegt von \\
 \pagestyle{plain}
 \section*{Eidesstattliche Erklärung}
 \addcontentsline{toc}{section}{Eidesstattliche Erklärung}
-Ich versichere hiermit, dass ich die vorliegende Arbeit selbständig verfasst und keine
-anderen als die im Literaturverzeichnis angegebenen Quellen benutzt habe. \\
+Ich versichere hiermit, dass ich die vorliegende Arbeit selbständig verfasst und keine anderen als die im Literaturverzeichnis angegebenen Quellen benutzt habe. \\
 \noindent Alle Stellen, die wörtlich oder sinngemäß aus veröffentlichten oder noch nicht veröffentlichten Quellen entnommen sind, sind als solche kenntlich gemacht. \\
 \noindent Die Zeichnungen oder Abbildungen in dieser Arbeit sind von mir selbst erstellt worden oder mit einem entsprechenden Quellennachweis versehen. \\
 \noindent Diese Arbeit ist in gleicher oder ähnlicher Form noch bei keiner anderen Prüfungsbehörde eingereicht worden.
@@ -139,8 +147,8 @@ Jemand "`musste"' Josef K. verleumdet haben, denn ohne dass er etwas Böses \cit
 Weiter unten im Text (S. 8) heißt es, dass es "`endgültige"' Leistungen in der Wissenschaft gar nicht geben könne.~\cite[S.~5--6]{Weber.1994b}
 \begin{figure}[h]
 	% Schneide eingebundenes PDF automatisch zu
-	\immediate\write18{pdfcrop fig/PT1/PT1-matlab.pdf}%
-	\centering \includegraphics[width=0.5\textwidth]{fig/PT1/PT1-matlab-crop.pdf}
+	%\immediate\write18{pdfcrop fig/PT1/PT1-matlab.pdf}
+	\centering \includegraphics[width=0.5\textwidth]{fig/PT1/PT1-matlab.pdf}
 	\caption{Bodediagramm PT1}
 \end{figure}
 \blindtext

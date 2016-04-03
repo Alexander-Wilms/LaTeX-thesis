@@ -30,6 +30,7 @@
 # Project specific
 thesis.pdf
 octave-workspace
+*-crop.pdf
 
 # Windows image file caches
 Thumbs.db
