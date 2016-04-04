@@ -65,10 +65,10 @@
 % Schneide automatisch alle mit /includegraphics eingebundene PDFs zu
 \usepackage{xstring}
 \let\oldincludegraphics\includegraphics
-\renewcommand{\includegraphics}[2][width=\textwidth]{
-	\immediate\write18{pdfcrop #2}
-	\StrSubstitute{#2}{.pdf}{-crop.pdf}[\temp]
-	\oldincludegraphics[#1]{\temp}
+\renewcommand{\includegraphics}[2][width=\textwidth]{%
+	\immediate\write18{pdfcrop #2}%
+	\StrSubstitute{#2}{.pdf}{-crop.pdf}[\temp]%
+	\oldincludegraphics[#1]{\temp}%
 	}
 
 \begin{document}
