@@ -51,7 +51,6 @@
 \usepackage{epstopdf}
 % Siehe http://tex.stackexchange.com/questions/28198/using-ieeetrantools
 \usepackage[retainorgcmds]{IEEEtrantools}
-
 \usepackage{microtype}
 \usepackage{blindtext}
 \newcounter{savepage}
@@ -77,24 +76,23 @@
 \newpage\null\thispagestyle{empty}\newpage
 \newpage
 \pagestyle{empty}
-\begin{figure}[t]
-	\centering
-	\includegraphics[width=0.35\textwidth]{fig/Logo/h-da-logo-sw.pdf}
-\end{figure}
-\vfill
 \begin{center}
+\includegraphics[width=0.35\textwidth]{fig/Logo/h-da-fbmk-logo-sw.pdf}
+\vfill
 \Large Hochschule Darmstadt \\
-\normalsize \textsc{- Fachbereich Maschinenbau und Kunststofftechnik -} \\
+\vspace{12pt}
+Fachbereich Maschinenbau und Kunststofftechnik \normalsize \\
 \vfill
 % \@title und \@author verfügbar machen
 \makeatletter
-\Huge \@title \\
-\normalsize
-\vspace{12pt}
+\@title \\
+\vfill
 Abschlussarbeit zur Erlangung des akademischen Grades \\
+\vspace{12pt}
 Bachelor of Science (B.Sc.)
 \vfill
 vorgelegt von \\
+\vspace{12pt}
 \@author
 \makeatother
 \vfill
