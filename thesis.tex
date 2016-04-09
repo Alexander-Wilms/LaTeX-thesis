@@ -4,9 +4,9 @@
 % Umlaute müssen nicht maskiert werden
 \usepackage[utf8]{inputenc}
 % Titel
-\title{Der Titel der Arbeit}
+\title{Beschwerdemanagement}
 % Autor
-\author{Jon Doe}
+\author{Dominik Appel, Florian Schmitt, Fabian Alexander Wilms}
 % Vektorschriftart
 \usepackage{lmodern}
 % für Deutsche Begriffe und Silbentrennung
@@ -28,23 +28,8 @@
 \usepackage{setspace}
 \onehalfspacing
 % BibLaTeX benutzen
-\usepackage[backend=biber,citestyle=alphabetic,bibstyle=alphabetic]{biblatex}
+\usepackage[backend=biber]{biblatex}
 \addbibresource{bib/Bibliographie.bib}
-% Formatierung an Vorgaben anpassen
-\DeclareLabelalphaTemplate{
-	\labelelement{
-		\field[final]{shorthand}
-		\field{label}
-		\field[strwidth=3,strside=left,ifnames=1]{labelname}
-		\field[strwidth=1,strside=left]{labelname}
-	}
-	\labelelement{
-	\literal{-}
-	}
-	\labelelement{
-	\field[strwidth=2,strside=right]{year}
-	}
-}
 % Seitenränder anpassen
 \usepackage{geometry}
 \geometry{left=2cm, right=2cm, top=2.5cm, bottom=2cm}
@@ -53,197 +38,105 @@
 % Siehe http://tex.stackexchange.com/questions/28198/using-ieeetrantools
 \usepackage[retainorgcmds]{IEEEtrantools}
 \usepackage{microtype}
-\usepackage{blindtext}
-\newcounter{savepage}
 % pdf-Metadaten und Hyperlinks
 \usepackage[pdfsubject = {{The subject of this thesis}},
-			pdfkeywords = {{Keyword Keyword2}},
-			pdfstartview = Fit,
-			pdfpagelayout = SinglePage,
-			hidelinks,
-			pdfusetitle]{hyperref}
-% Schneide automatisch alle mit /includegraphics eingebundene PDFs zu
-\usepackage{xstring}
-\let\oldincludegraphics\includegraphics
-\renewcommand{\includegraphics}[2][width=\textwidth]{%
-	\immediate\write18{pdfcrop #2}%
-	\StrSubstitute{#2}{.pdf}{-crop.pdf}[\temp]%
-	\oldincludegraphics[#1]{\temp}%
-	}
+pdfkeywords = {{Keyword Keyword2}},
+pdfstartview = Fit,
+pdfpagelayout = SinglePage,
+hidelinks,
+pdfusetitle]{hyperref}
 % Deutsche Anführungszeichen
 \usepackage{csquotes}
+%\setcounter{section}{-1}
 \begin{document}
-\pagenumbering{Roman}
-\newpage\null\thispagestyle{empty}\newpage
-\newpage
-\pagestyle{empty}
-\begin{center}
-\includegraphics[width=0.35\textwidth]{fig/Logo/h-da-fbmk-logo-sw.pdf}
-\vfill
-\Large Hochschule Darmstadt \\
-\vspace{12pt}
-Fachbereich Maschinenbau und Kunststofftechnik \normalsize \\
-\vfill
-% \@title und \@author verfügbar machen
-\makeatletter
-\@title \\
-\vfill
-Abschlussarbeit zur Erlangung des akademischen Grades \\
-\vspace{12pt}
-Bachelor of Science (B.Sc.)
-\vfill
-vorgelegt von \\
-\vspace{12pt}
-\@author
-\makeatother
-\vfill
-\begin{tabular}[h]{p{4cm}r}
-	Referent(in): & Name des Erstbetreuers\\
-	Korreferent(in):  & Name des Zweitbetreuers \\
-\end{tabular}
-\end{center}
-\newpage
-\pagestyle{plain}
-\section*{Eidesstattliche Erklärung}
-\addcontentsline{toc}{section}{Eidesstattliche Erklärung}
-Ich versichere hiermit, dass ich die vorliegende Arbeit selbständig verfasst und keine anderen als die im Literaturverzeichnis angegebenen Quellen benutzt habe. \\
-\noindent Alle Stellen, die wörtlich oder sinngemäß aus veröffentlichten oder noch nicht veröffentlichten Quellen entnommen sind, sind als solche kenntlich gemacht. \\
-\noindent Die Zeichnungen oder Abbildungen in dieser Arbeit sind von mir selbst erstellt worden oder mit einem entsprechenden Quellennachweis versehen. \\
-\noindent Diese Arbeit ist in gleicher oder ähnlicher Form noch bei keiner anderen Prüfungsbehörde eingereicht worden.
-\newline\newline
-Darmstadt, den \today
-\newpage
-\phantomsection
-\addcontentsline{toc}{section}{Abstract}
-\let\oldabstractname\abstractname
-\renewcommand{\abstractname}{Abstract}
-\begin{abstract}
-\blindtext \blindtext
-\end{abstract}
-\newpage
-\phantomsection
-\addcontentsline{toc}{section}{Zusammenfassung}
-\let\abstractname\oldabstractname
-\begin{abstract}
-\blindtext \blindtext
-\end{abstract}
-\newpage
-\section*{Vorwort}
-\addcontentsline{toc}{section}{Vorwort}
-\blindtext \blindtext
-\newpage
-\phantomsection
-\addcontentsline{toc}{section}{Inhaltsverzeichnis}
-\tableofcontents
-% Letzte Seite mit römischer Seitenzahl speichern
-\cleardoublepage
-\setcounter{savepage}{\arabic{page}}
-\newpage
-\cleardoublepage
-\pagenumbering{arabic}
-% Struktur basiert auf http://kleinmann.eit.h-da.de/99_ThesisInfos/
-\section{Einführung / Problembeschreibung}
-Jemand \enquote{musste} Josef K. verleumdet haben, denn ohne dass er etwas Böses \cite{Pleisteiner.2007} getan hätte, wurde er eines Morgens verhaftet. »Wie ein Hund!« sagte er, es war, als sollte die Scham ihn überleben \ac{KDE} \cite[S.55ff]{Accardi.2010}. Als Gregor Sams eines Morgens aus unruhigen Träumen erwachte, fand er sich in seinem Bett zu einem ungeheuren Ungeziefer \index{Ungeziefer} verwandelt \cite{Lewis.2010}.
-\subsection{Was ist die Motivation?}
-\blindtext
-Weiter unten im Text (S. 8) heißt es, dass es \enquote{endgültige} Leistungen in der Wissenschaft gar nicht geben könne.~\cite[S.~5--6]{Weber.1994b}
-\begin{figure}[h]
-	\centering \includegraphics[width=0.5\textwidth]{fig/PT1/PT1-matlab.pdf}
-	\caption{Bodediagramm PT1}
-\end{figure}
-\blindtext
-\begin{IEEEeqnarray}{rCl}
-	a & = & b + c \\
-	& = & d + e + f + g + h \\
-	& = & p + q + r + s
-\end{IEEEeqnarray}
-\blindtext
-\begin{table}[h]
-	\centering
-	\begin{tabular}[h]{|c|c|}
-		\hline
-		$U_e$ / V& $U_a$ / V\\ \hline
-		0.1 & 0.2 \\ \hline
-		0.2 & 0.4 \\ \hline
-		0.3 & 0.6 \\ \hline
-		0.4 & 0.8 \\ \hline
-		0.5 & 1 \\ \hline
-	\end{tabular}
-	\caption{Messergebnisse}
-\end{table}
-\subsection{Was ist die Aufgabe?}
-\blindtext
-\subsection{Was ist das Ziel dieser Arbeit?}
-\blindtext
-\subsection{Was war der Status Quo, bevor mit dieser Arbeit begonnen wurde?}
-\blindtext
-\subsubsection{Firma X hat etwas in der Vergangenheit auf diesem oder jenem Wege gemacht…}
-\blindtext
-\section{Problemlösung}
-\blindtext
-\subsection{Was sind die Optionen / Welche prinzipiellen Lösungen sind möglich?}
-\blindtext
-\subsection{Stand der Technik / Wie wird es woanders gemacht?}
-\blindtext
-\subsection{Was ist der in dieser Arbeit gewählte Ansatz?}
-\blindtext
-\subsection{Weshalb wurde dieser Ansatz gewählt / Was unterscheidet ihn von anderen / Was ist neu / Was ist bekannt?}
-\blindtext
-\subsection{Detaillierte Beschreibung der Problemlösung}
-\blindtext
-\section{Implementierung und Test}
-\blindtext
-\subsection{Wie wurde es implementiert}
-\blindtext
-\subsection{Wie wurde getestet}
-\blindtext
-\subsection{Warum wurde so getestet?}
-\blindtext
-\section{Validierung}
-\blindtext
-\subsection{Was sind die Ergebnisse}
-\blindtext
-\subsection{Vor- und Nachteile des entwickelten Systems}
-\blindtext
-\section{Zusammenfassung / Fazit / zukünftige Arbeit}
-\blindtext
-\subsection{Was wurde getan}
-\blindtext
-\subsection{Was muss noch getan werden / Wie kann das System verbessert werden?}
-\blindtext
-\newpage
-\cleardoublepage
-\pagenumbering{Roman}
-% Seitenzahl wiederherstellen
-\setcounter{page}{\thesavepage}
-\clearpage
-\phantomsection
-\addcontentsline{toc}{section}{Literatur}
-\printbibliography
-\newpage
-\renewcommand{\indexname}{Stichwortverzeichnis}
-\printindex
-\addcontentsline{toc}{section}{Stichwortverzeichnis}
-\newpage
-\section*{Abkürzungsverzeichnis}
-\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
-\begin{acronym}[Bash] % längste Abkürzung
-	\acro{KDE}{K Desktop Environment}
-	\acro{SQL}{Structured Query Language}
-	\acro{Bash}{Bourne-again shell}
-	\acro{JDK}{Java Development Kit}
-	\acro{VM}{Virtuelle Maschine}
-	\acro{I2C}[IC]{Inter-Integrated Circuit}
-\end{acronym}
-\newpage
-\phantomsection
-\addcontentsline{toc}{section}{Abbildungsverzeichnis}
-\listoffigures
-\newpage
-\phantomsection
-\addcontentsline{toc}{section}{Tabellenverzeichnis}
-\listoftables
-\newpage
-\section*{Anhang}
-\addcontentsline{toc}{section}{Anhang}
+	\pagestyle{empty}
+	\begin{center}
+		\includegraphics[width=0.35\textwidth]{fig/Logo/h-da-fbmk-logo-sw.pdf}
+		\vfill
+		\Large Hochschule Darmstadt \\
+		\vspace{12pt}
+		Fachbereich Maschinenbau und Kunststofftechnik \normalsize \\
+		\vfill
+		% \@title und \@author verfügbar machen
+		\makeatletter
+		\@title \\
+		\vfill
+		vorgelegt von \\
+		\vspace{12pt}
+		\@author
+		\makeatother
+		\vfill
+		Dozent: Prof. Dr. R. Stengler\\
+	\end{center}
+	\newpage
+	\pagestyle{plain}
+	\phantomsection
+	\addcontentsline{toc}{section}{Inhaltsverzeichnis}
+	\tableofcontents
+	\newpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Motivation}
+	\section*{Motivation}
+	Da die Abgasaffäre um den Konzern Volkswagen bis heute noch nicht vollständig aufgeklärt ist und die Kunden die Folgen für sich noch nicht abschätzen können beziehungsweise in Europa zu ihrem Nachteil regional inkonsistent behandelt werden bearbeiten wir, um dies in unserer beruflichen Laufbahn besser zu handhaben, das Thema Beschwerdemanagement.
+	\section{Der Beschwerdebegriff}
+	\begin{center}
+		Definition:
+	\end{center}
+	\blockquote{Beschwerdemanagement umfasst die Planung, Durchführung und Kontrolle aller Maßnahmen, die ein Unternehmen im Zusammenhang mit Kundenbeschwerden ergreift.} {\cite{.02.04.2016}} \\
+	
+	Es gibt drei verschiedene Beschwerdearten:
+	
+	\begin{itemize}
+		\item Die Kundenbeschwerde: Der Kunde ist mit der Leistung unzufrieden \\
+		Fallbeispiel: Herr Müller bestellt im Internet ein Smartphone, das erhaltene Smartphone hat nicht die gewünschte Farbe.
+		\item Die Lieferantenbeschwerde: Ein Unternehmen ist mit einem Lieferanten unzufrieden \\
+		Fallbeispiel: Ein Automobilhersteller bekommt für die Produktion eine Stahllegierung geliefert. Bei der stichprobenartigen Qualitätskontrolle stellt sich heraus, dass die Stahllegierung nicht die gewünschte Zugfestigkeit besitzt.
+		\item Die interne Beschwerde: Das Unternehmen ist vor Auslieferung nicht mit der eigenen Leistung zufrieden. \\
+		Fallbeispiel: Ein Hersteller für Servomotoren bemerkt bei der Qualitätsprüfung Ungenauigkeiten in der Position. Es stellt sicher heraus, dass die Zahnräder des Getriebes ein zu großes Spiel aufweisen.
+	\end{itemize}
+	\subsection{Unterarten}
+	Diese Beschwerdearten lassen sich nach dem Grund der Beschwerde in zwei Unterkategorien aufteilen.
+	\begin{itemize}
+		\item Produktbeschwerde \\
+		Bei der Produktbeschwerde wird die Leistung beanstandet (siehe Fallbeispiele zu Beschwerdearten)
+		\item Beschwerde über Kundenbetreuung \\
+		Bei der Beschwerde über die Kundenbetreuung ist der Kunde mit dem Service unzufrieden, Beispiele hierfür wären: Zeiten zur Erreichbarkeit oder aber auch schlechtes Beschwerdemanagement.
+	\end{itemize}
+	Innerhalb eines Unternehmens können die Beschwerden weiterhin je nach Auswirkung der Beschwerde zur Kanalisierung unterteilt werden.
+	Beispielsweise in Beschwerden für starke Auswirkungen wie Ausfälle und Defekte und in Beanstandung für schwächere Auswirkungen wie beispielsweise geringe optische Mängel oder den Verdacht auf zukünftige Probleme bei der Produktion.
+	\section{Beschwerden als Chance}
+	Beschwerden sind Feedback, das man als Chance sehen sollte, mit dem Ziel, Gewinn und Wettbewerbsfähigkeit zu erhöhen (vergl. PDCA). Dies hat den Vorteil für das Unternehmen, Kundenabwanderung vermeiden und Hinweise nutzen zu können bezüglich betrieblicher Schwächen und Marktchancen. {\cite{.02.04.2016}} Ein Kunde, der sich beschwert, hat die Beziehung zum Unternehmen noch nicht aufgegeben und fühlt sich nach einer erfolgreichen Beschwerdebehandlung enger mit dem Unternehmen verbunden. Zudem kann ein gutes Beschwerdemanagement Kundenbefragungen ersetzen, die kaum weitere Informationen liefern, aber weitere Kosten verursachen. Daher sollte diese Form des Qualitätsmanagements als Weg verstanden werden, der Kosten verhindert anstatt sie zu verursachen. Es lassen sich zwei Teilzielarten ausmachen: Solche, die relevant für die Kundenbeziehung sind und solche, die relevant für die Qualität sind.
+	So möchte man gefährdete Kundenbeziehungen stabilisieren, das kundenorientierte Image fördern und so für positive Mundpropaganda sorgen. Außerdem sollte das Feedback genutzt werden, um die Produktqualität zu verbessern.  {\cite{.02.04.2016}}
+	\section{Aktives und professionelles Beschwerdemanagement}
+	\subsection{Beschwerdemanagement in der Unternehmenspraxis}
+	Das Beschwerdemanagement ist ist in der Norm DIN ISO 10002 definiert, welche es seit 2005 gibt. Diese ist zwar eine eigenständige Norm, hängt aber mit der DIN ISO 9001 zusammen. Sie enthält begriffliche Festlegungen und Beschreibungen von Prinzipien, zentralen Aufgaben und konkreten Hilfsmitteln des Beschwerdemanagements.  {\cite{.02.04.2016}}
+	\subsection{Bausteine des Beschwerdemanagements}
+	Die Aufgaben des Beschwerdemanagements lassen sich in acht Bereiche unterteilen, jeweils vier in den Kategorien direktes und indirektes Beschwerdemanagement. Im direkten Beschwerdemanagement steht man im direkten Kontakt mit den Kunden, dies umfasst Beschwerdestimulierung, Beschwerdeannahme, Beschwerdebearbeitung und Beschwerdereaktion. Im indirekten Beschwerdemanagement gibt es keinen direkten Kundenkontakt, sondern man kümmert sich um Beschwerdeauswertung, Beschwerdemanagement-Controlling, Beschwerdereporting und Beschwerdeinformationsnutzung.  {\cite{.02.04.2016}}
+	\subsubsection{Direktes Beschwerdemanegement}
+	Die Beschwerdestimulierung hat das Ziel, Kunden mit Grund zur Unzufriedenheit mit dem Produkt anzuregen, dem Unternhmen Feedback zu geben, da sonst wertvolle Informationen verloren gehen könnten. Im Bereich Beschwerdeannahme ist der Aspekt \textbf{One face to the customer} wichtig. Die Beschwerde muss angemessen erfasst werden und dem Kunden versichert werden, dass das Unternehmen angemessen darauf reagiert. In der Beschwerdebearbeitung geht es um die Handhabung der eingehenden Beschwerden. Die Beschwerdereaktion umfasst die Vorgänge, die nach einer Beschwerde angestoßen werden müssen.  {\cite{.02.04.2016}}
+	\subsubsection{Indirektes Beschwerdemanagement}
+	Die Bausteine des Beschwerdemanagements lassen sich also folgendermaßen zusammenfassen:
+	\begin{itemize}
+		\item Bisherige Beschwerden erheben
+		\item Beschwerdeformen definieren
+		\item Beschwerden gezielt anregen
+		\item Beschwerden annehmen
+		\item Beschwerden erfassen
+		\item auf Beschwerden reagieren
+		\item Beschwerden auswerten
+	\end{itemize}
+	\subsection{Einführung des Beschwerdemanagements}
+	Studien zum Stand der Umsetzung in Deutschland haben eine große strategische Bedeutung des Beschwerdemanagements nachgewiesen. Allerdings besteht auch noch Verbesserungspotential, da oft die Kundenzufriedenheit nicht wiederhergestellt wird und über 60 \% der Kunden auf die Reaktion auf ihre Beschwerde unzufrieden sind.  {\cite{.02.04.2016}}
+	
+	Um ein Beschwerdemanagement reibungslos einführen zu können, müssen Kunden und Mitarbeiter von seiner Sinnhaftigkeit zunächst überzeugt werden. Es sollte ein offener und ehrlicher Umgang mit Kundenbeschwerden herrschen. Beschwerden sind nicht zu verheimlichen, sondern wichtig und erwünscht. Der Kunde muss überzeugt werden, dass sein Anliegen ernst genommen wird. \cite{Franke.}
+	\nocite{Wikipedia.02.03.2016}
+	\nocite{.02.04.2016}
+	\nocite{.02.04.2016b}
+	\nocite{Franke.}
+	\newpage
+	\phantomsection
+	\addcontentsline{toc}{section}{Literatur}
+	\setcounter{biburllcpenalty}{7000}
+	\setcounter{biburlucpenalty}{8000}
+	\printbibliography
 \end{document}
