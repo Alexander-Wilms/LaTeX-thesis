@@ -30,6 +30,10 @@
 % BibLaTeX benutzen
 \usepackage[backend=biber]{biblatex}
 \addbibresource{bib/Bibliographie.bib}
+% Erlaube Zeilenumbrüche in URLs nach Buchstaben und Zahlen
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\setcounter{biburlnumpenalty}{9000}
 % Seitenränder anpassen
 \usepackage{geometry}
 \geometry{left=2cm, right=2cm, top=2.5cm, bottom=2cm}
@@ -136,7 +140,5 @@ pdfusetitle]{hyperref}
 	\newpage
 	\phantomsection
 	\addcontentsline{toc}{section}{Literatur}
-	\setcounter{biburllcpenalty}{7000}
-	\setcounter{biburlucpenalty}{8000}
 	\printbibliography
 \end{document}
