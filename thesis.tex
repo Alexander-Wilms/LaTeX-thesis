@@ -30,6 +30,10 @@
 % BibLaTeX benutzen
 \usepackage[backend=biber,citestyle=alphabetic,bibstyle=alphabetic]{biblatex}
 \addbibresource{bib/Bibliographie.bib}
+% Erlaube Zeilenumbrüche in URLs nach Buchstaben und Zahlen
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+\setcounter{biburlnumpenalty}{9000}
 % Formatierung an Vorgaben anpassen
 \{
 		\field[final]{shorthand}
