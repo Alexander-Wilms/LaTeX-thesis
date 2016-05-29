@@ -1,0 +1,35 @@
+\newpage
+\cleardoublepage
+\pagenumbering{Roman}
+% Seitenzahl wiederherstellen
+\setcounter{page}{\thesavepage}
+\clearpage
+\phantomsection
+\addcontentsline{toc}{section}{Literatur}
+\printbibliography
+\newpage
+\renewcommand{\indexname}{Stichwortverzeichnis}
+\printindex
+\addcontentsline{toc}{section}{Stichwortverzeichnis}
+\newpage
+\section*{Abkürzungsverzeichnis}
+\addcontentsline{toc}{section}{Abkürzungsverzeichnis}
+\begin{acronym}[Bash] % längste Abkürzung
+	\acro{KDE}{K Desktop Environment}
+	\acro{SQL}{Structured Query Language}
+	\acro{Bash}{Bourne-again shell}
+	\acro{JDK}{Java Development Kit}
+	\acro{VM}{Virtuelle Maschine}
+	\acro{I2C}[IC]{Inter-Integrated Circuit}
+\end{acronym}
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Abbildungsverzeichnis}
+\listoffigures
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Tabellenverzeichnis}
+\listoftables
+\newpage
+\section*{Anhang}
+\addcontentsline{toc}{section}{Anhang}

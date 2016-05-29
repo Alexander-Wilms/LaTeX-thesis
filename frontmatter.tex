@@ -1,0 +1,69 @@
+\pagenumbering{Roman}
+\newpage\null\thispagestyle{empty}\newpage
+\newpage
+\pagestyle{empty}
+\begin{center}
+\includegraphics[width=0.35\textwidth]{fig/Logo/h-da-fbmk-logo-sw.pdf}
+\vfill
+\Large Hochschule Darmstadt \\
+\vspace{12pt}
+Fachbereich Maschinenbau und Kunststofftechnik \normalsize \\
+\vfill
+% \@title und \@author verfügbar machen
+\makeatletter
+\@title \\
+\vfill
+Abschlussarbeit zur Erlangung des akademischen Grades \\
+\vspace{12pt}
+Bachelor of Science (B.Sc.)
+\vfill
+vorgelegt von \\
+\vspace{12pt}
+\@author
+\makeatother
+\vfill
+\begin{tabular}[h]{p{4cm}r}
+	Referent(in): & Name des Erstbetreuers\\
+	Korreferent(in):  & Name des Zweitbetreuers \\
+\end{tabular}
+\end{center}
+\newpage
+\pagestyle{plain}
+\section*{Eidesstattliche Erklärung}
+\addcontentsline{toc}{section}{Eidesstattliche Erklärung}
+Ich versichere hiermit, dass ich die vorliegende Arbeit selbständig verfasst und keine anderen als die im Literaturverzeichnis angegebenen Quellen benutzt habe. \\
+\noindent Alle Stellen, die wörtlich oder sinngemäß aus veröffentlichten oder noch nicht veröffentlichten Quellen entnommen sind, sind als solche kenntlich gemacht. \\
+\noindent Die Zeichnungen oder Abbildungen in dieser Arbeit sind von mir selbst erstellt worden oder mit einem entsprechenden Quellennachweis versehen. \\
+\noindent Diese Arbeit ist in gleicher oder ähnlicher Form noch bei keiner anderen Prüfungsbehörde eingereicht worden.
+\newline\newline
+Darmstadt, den \today
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Abstract}
+\let\oldabstractname\abstractname
+\renewcommand{\abstractname}{Abstract}
+\begin{abstract}
+\blindtext \blindtext
+\end{abstract}
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Zusammenfassung}
+\let\abstractname\oldabstractname
+\begin{abstract}
+\blindtext \blindtext
+\end{abstract}
+\newpage
+\section*{Vorwort}
+\addcontentsline{toc}{section}{Vorwort}
+\blindtext \blindtext
+\newpage
+\phantomsection
+\addcontentsline{toc}{section}{Inhaltsverzeichnis}
+\tableofcontents
+% Letzte Seite mit römischer Seitenzahl speichern
+\cleardoublepage
+\setcounter{savepage}{\arabic{page}}
+\newpage
+\cleardoublepage
+\pagenumbering{arabic}
+% Struktur basiert auf http://kleinmann.eit.h-da.de/99_ThesisInfos/

@@ -1,0 +1,98 @@
+% Titel
+\title{Der Titel der Arbeit}
+% Autor
+\author{Jon Doe}
+%\usepackage{fontspec}
+% für Deutsche Begriffe und Silbentrennung
+\usepackage{polyglossia}
+\setmainlanguage{german}
+% Silbentrennung
+%\hyphenation{Re-gel-kreis}
+% Vektorschriftart
+\usepackage{lmodern}
+% Formeln
+\usepackage{amsmath}
+% Grafiken
+\usepackage{graphicx}
+% Abkürzungsverzeichnis
+\usepackage[printonlyused]{acronym}
+% Stichwortverzeichnis
+\usepackage{makeidx}
+\makeindex
+% idxlayout works around a bug in LaTeX, which results in a wrong vertical position of the title
+% http://tex.stackexchange.com/questions/23287/setting-the-same-distance-from-the-top-of-the-page-
+% for-chapter-and-index-titles
+\usepackage{idxlayout}
+% Zeilenabstand 1,5 Zeilen
+\usepackage{setspace}
+\onehalfspacing
+% BibLaTeX benutzen
+\usepackage[backend=biber,citestyle=alphabetic,bibstyle=alphabetic]{biblatex}
+\addbibresource{bib/Bibliographie.bib}
+% Formatierung von Zitaten und Bibliographie an Vorgaben anpassen
+\DeclareLabelalphaTemplate{
+	\labelelement{
+		\field[final]{shorthand}
+		\field{label}
+		\field[strwidth=3,strside=left,ifnames=1]{labelname}
+		\field[strwidth=1,strside=left]{labelname}
+	}
+	\labelelement{
+		\literal{-}
+	}
+	\labelelement{
+		\field[strwidth=2,strside=right]{year}
+	}
+}
+% Seitenränder anpassen
+\usepackage{geometry}
+\geometry{left=2cm, right=2cm, top=2.5cm, bottom=2cm}
+% eps-Grafiken
+\usepackage{epstopdf}
+% Siehe http://tex.stackexchange.com/questions/28198/using-ieeetrantools
+\usepackage[retainorgcmds]{IEEEtrantools}
+\usepackage{microtype}
+% Lorem Ipsum
+\usepackage{blindtext}
+% [H] für figures
+\usepackage{float}
+\newcounter{savepage}
+% pdf-Metadaten und Hyperlinks
+\usepackage[pdfsubject = {{}},
+pdfkeywords = {{Keyword Keyword2}},
+pdfstartview = Fit,
+pdfpagelayout = SinglePage,
+hidelinks,
+pdfusetitle,
+% Umlaute in Lesezeichen
+pdfencoding=auto]{hyperref}
+% Schneide automatisch alle mit /includegraphics eingebundene PDFs zu
+\usepackage{xstring}
+\let\oldincludegraphics\includegraphics
+\renewcommand{\includegraphics}[2][width=\textwidth]{%
+	\immediate\write18{pdfcrop #2}%
+	\StrSubstitute{#2}{.pdf}{-crop.pdf}[\temp]%
+	\oldincludegraphics[#1]{\temp}%
+	}
+% Deutsche Anführungszeichen
+\usepackage{csquotes}
+ % xcolor muss vor tikz geladen werden
+\usepackage[dvipsnames]{xcolor}
+% Zeichnungen
+\usepackage{tikz}
+\usetikzlibrary{shapes,arrows}
+% Code-Listings
+\usepackage{listings}
+% Syntax-Highlighting für Matlab-Code
+% \usepackage{mcode}
+\lstset{
+	basicstyle=\footnotesize\ttfamily,
+	frame=single,
+	rulecolor=\color{black},
+    breaklines=true,
+    tabsize=2,
+    captionpos=b,
+    keywordstyle=\color{Blue},
+	stringstyle=\color{Orange},
+	commentstyle=\color{OliveGreen},
+	extendedchars=true}
