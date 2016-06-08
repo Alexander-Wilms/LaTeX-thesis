@@ -67,6 +67,8 @@ pdfusetitle,
 pdfencoding=auto]{hyperref}
 % Schneide automatisch alle mit /includegraphics eingebundene PDFs zu
 \usepackage{xstring}
+% Benötigt für --shell-escape unter LuaLaTeX 0.95
+\usepackage{shellesc}
 \let\oldincludegraphics\includegraphics
 \renewcommand{\includegraphics}[2][width=\textwidth]{%
 	\immediate\write18{pdfcrop #2}%
